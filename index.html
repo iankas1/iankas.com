@@ -1,27 +1,107 @@
-<div class="legal">
-  <p><strong>Firmenname:</strong> iankas GmbH</p>
-  <p><strong>Adresse:</strong> Quellenstrasse 15, 5242 Birr, Schweiz</p>
-  <p><strong>Geschäftsführer:</strong> Jan Lukas Lehmann</p>
-  <p><strong>MWST-Nr.:</strong> CHE-181.804.178</p>
-  <p><strong>Handelsregisteramt:</strong> Kanton Aargau</p>
-  <p><strong>Zuständiges Gericht:</strong> Bezirksgericht Brugg</p>
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iankas GmbH</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #222;
+        margin: 0;
+        padding: 2rem;
+        text-align: center;
+      }
 
-  <hr />
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+      }
 
-  <p><strong>Marken & Angebote:</strong></p>
-  <p>Die iankas GmbH betreibt unter anderem folgende Marken:</p>
-  <p>
-    <a href="https://solarinvoice.ch" target="_blank">solarinvoice.ch</a><br />
-    <a href="https://solarinvoice.de" target="_blank">solarinvoice.de</a>
-  </p>
-  <p>Solar Invoice ist ein Abrechnungsdienst für Solarstrom und Nebenkosten.</p>
-  <p>Weitere Angebote befinden sich im Aufbau.</p>
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
 
-  <hr />
+      .box {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        text-align: left;
+        border-radius: 4px;
+      }
 
-  <p><strong>Beteiligungen:</strong></p>
-  <p>Die iankas GmbH ist vollständige Teilhaberin der Solar Invoice UG (haftungsbeschränkt).</p>
-  <p><strong>Adresse der Solar Invoice UG:</strong><br />
-     Friedrichstr. 155, 10117 Berlin, Deutschland</p>
-  <p><strong>Geschäftsführer:</strong> Jan Lukas Lehmann</p>
-</div>
+      .box h2 {
+        font-size: 1.3rem;
+        margin-top: 0;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 0.5rem;
+      }
+
+      a {
+        color: #004080;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        margin-top: 3rem;
+        font-size: 0.9rem;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>iankas GmbH</h1>
+
+      <div class="box">
+        <h2>Firmenadresse</h2>
+        <p><strong>iankas GmbH</strong><br />
+        Quellenstrasse 15<br />
+        5242 Birr, Schweiz</p>
+      </div>
+
+      <div class="box">
+        <h2>Firmeninformationen</h2>
+        <p><strong>Geschäftsführer:</strong> Jan Lukas Lehmann</p>
+        <p><strong>MWST-Nr.:</strong> CHE-181.804.178</p>
+        <p><strong>Handelsregisteramt:</strong> Kanton Aargau</p>
+        <p><strong>Zuständiges Gericht:</strong> Bezirksgericht Brugg</p>
+      </div>
+
+      <div class="box">
+        <h2>Marken & Angebote</h2>
+        <p>Die iankas GmbH betreibt unter anderem:</p>
+        <ul>
+          <li><a href="https://solarinvoice.ch" target="_blank">solarinvoice.ch</a></li>
+          <li><a href="https://solarinvoice.de" target="_blank">solarinvoice.de</a></li>
+        </ul>
+        <p>Solar Invoice ist ein Abrechnungsdienst für Solarstrom und Nebenkosten.</p>
+        <p>Weitere Angebote sind in Vorbereitung.</p>
+      </div>
+
+      <div class="box">
+        <h2>Beteiligungen</h2>
+        <p>Die iankas GmbH ist vollständige Teilhaberin der:</p>
+        <p><strong>Solar Invoice UG (haftungsbeschränkt)</strong><br />
+        Friedrichstr. 155<br />
+        10117 Berlin, Deutschland</p>
+        <p><strong>Geschäftsführer:</strong> Jan Lukas Lehmann</p>
+      </div>
+
+      <footer>
+        <p>© <span id="year"></span> iankas GmbH – Alle Rechte vorbehalten.</p>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -7,29 +7,39 @@
     <style>
         body {
             background-color: #ffffff;
-            font-family: "Times New Roman", Times, serif; /* Klassische Serifenschrift */
-            margin: 40px;
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             color: #000000;
-            line-height: 1.2;
-        }
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
         }
         .content {
-            max-width: 800px;
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
         }
         p {
-            margin: 10px 0;
+            margin: 5px 0;
+            font-size: 1.1rem;
         }
         a {
             color: #0000EE;
-            text-decoration: underline;
         }
         hr {
             border: 0;
             border-top: 1px solid #000;
-            margin: 20px 0;
+            margin: 20px auto;
+            width: 100%;
+        }
+        .legal {
+            margin-top: 20px;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -38,11 +48,17 @@
     <div class="content">
         <h1>iankas GmbH</h1>
         
-        <hr>
-        
         <p>Beratungsdienstleistungen</p>
         <p>Strategische Investitionen</p>
         
+        <hr>
+
+        <div class="legal">
+            <p>Geschäftsführer: Jan Lukas Lehmann</p>
+            <p>Quellenstrasse 15, 5242 Birr</p>
+            <p>CHE-181.804.178</p>
+        </div>
+
         <hr>
 
         <p>Kontakt: <a href="mailto:info@iankas.com">info@iankas.com</a></p>

@@ -26,7 +26,6 @@
             letter-spacing: 1px;
         }
         
-        /* Grid für die 3 Service-Vierecke */
         .services-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -38,8 +37,8 @@
             padding: 25px 15px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            min-height: 200px;
+            justify-content: space-between;
+            min-height: 220px;
             box-sizing: border-box;
         }
         .service-box h3 {
@@ -53,13 +52,25 @@
         .service-box p {
             font-size: 0.95rem;
             line-height: 1.4;
-            margin: 0;
+            margin: 0 0 15px 0;
+        }
+        .price {
+            font-weight: bold;
+            font-size: 1rem;
+            border-top: 1px dotted #000;
+            padding-top: 10px;
+        }
+
+        .tax-note {
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            font-style: italic;
         }
 
         hr {
             border: 0;
             border-top: 1px solid #000;
-            margin: 30px auto;
+            margin: 20px auto;
             width: 100%;
         }
         .legal p, .contact-info p {
@@ -73,27 +84,14 @@
         a:hover {
             text-decoration: underline;
         }
-        
-        /* Membership Sektion */
-        .membership {
-            margin-top: 40px;
-            font-size: 0.9rem;
-        }
-        .membership img {
-            margin-top: 15px;
-            width: 180px; 
-            height: auto;
-            display: inline-block;
-        }
 
-        /* Responsive Design für Handys */
-        @media (max-width: 700px) {
+        @media (max-width: 750px) {
             .services-container {
                 grid-template-columns: 1fr;
             }
             body { 
                 height: auto;
-                padding: 20px 0;
+                padding: 40px 0;
             }
         }
     </style>
@@ -106,22 +104,33 @@
         <div class="services-container">
             <!-- Box 1: Sales -->
             <div class="service-box">
-                <h3>Sales</h3>
-                <p><b>Schweizerdeutsch, das Türen öffnet.</b><br>Kein Callcenter-Flair: Wir gewinnen Neukunden auf Augenhöhe – authentisch, lokal und mit dem richtigen Gespür für den Markt.</p>
+                <div>
+                    <h3>Sales</h3>
+                    <p>Authentische Kaltakquise auf Schweizerdeutsch, die Türen öffnet und echtes Interesse weckt.</p>
+                </div>
+                <div class="price">CHF 100.– pro Termin (Erfolgsbasis)</div>
             </div>
             
             <!-- Box 2: Quality -->
             <div class="service-box">
-                <h3>Quality</h3>
-                <p><b>Mystery-Einblicke in AG & ZH.</b><br>Wir testen Ihre Servicequalität dort, wo sie zählt. Objektive Mystery-Analysen, die Schwachstellen in Wettbewerbsvorteile verwandeln.</p>
+                <div>
+                    <h3>Quality</h3>
+                    <p>Mystery Shopping in AG & ZH. Objektive Analysen für einen messbaren Wettbewerbsvorteil.</p>
+                </div>
+                <div class="price">CHF 65.– pro Stunde inkl. Report</div>
             </div>
             
             <!-- Box 3: Copy -->
             <div class="service-box">
-                <h3>Copy</h3>
-                <p><b>Content, der "Schweiz" spricht.</b><br>Wir übersetzen nicht nur, wir lokalisieren. Botschaften, die kulturell landen und Ihre Zielgruppe emotional abholen.</p>
+                <div>
+                    <h3>Copy</h3>
+                    <p>Professionelle Lokalisierung Ihrer Inhalte für den Schweizer Markt – emotional und präzise.</p>
+                </div>
+                <div class="price">CHF 50.– pro Stunde Aufwand</div>
             </div>
         </div>
+
+        <p class="tax-note">Alle Angaben zzgl. MwSt von 8.1%</p>
         
         <hr>
 
@@ -136,14 +145,6 @@
         <div class="contact-info">
             <p>Kontakt: <a href="mailto:info@iankas.com">info@iankas.com</a></p>
             <p>Telefon: <a href="tel:+41563000054">+41 56 300 00 54</a></p>
-        </div>
-
-        <div class="membership">
-            <p>Stolzes Mitglied der</p>
-            <a href="https://swissstartupassociation.ch" target="_blank">
-                <!-- Stabiler Link zum Logo über das offizielle Asset-CDN -->
-                <img src="https://swissstartupassociation.chwp-content/uploads/logo-ssa.png" alt="Swiss Startup Association Logo">
-            </a>
         </div>
     </div>
 

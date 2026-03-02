@@ -7,20 +7,22 @@
     <link href="https://fonts.googleapis.com" rel="stylesheet">
     <style>
         :root {
-            --bg: #030008;
-            --accent-primary: #8A2BE2;
-            --accent-secondary: #4D4DFF;
-            --text-main: #ffffff;
-            --text-dim: #a1a1aa;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --banner-bg: rgba(255, 255, 255, 0.95);
+            --bg: #f8fafc; /* Sehr helles Blau-Grau */
+            --accent-primary: #7c3aed; /* Sattes Violett */
+            --accent-secondary: #3b82f6; /* Modernes Blau */
+            --text-main: #0f172a; /* Dunkles Slate für Lesbarkeit */
+            --text-dim: #64748b;
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(124, 58, 237, 0.1);
+            --banner-bg: #ffffff;
         }
 
         body {
             background-color: var(--bg);
-            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
-            background-size: 40px 40px;
+            /* Subtiles helles Raster */
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(124, 58, 237, 0.05) 1px, transparent 0);
+            background-size: 30px 30px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             display: flex;
@@ -28,97 +30,97 @@
             align-items: center;
             min-height: 100vh;
             color: var(--text-main);
-            overflow-x: hidden;
         }
 
+        /* Sanfte Lichtreflexe im Hintergrund */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: 
-                radial-gradient(circle at 10% 10%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(77, 77, 255, 0.15) 0%, transparent 40%);
+                radial-gradient(circle at 15% 15%, rgba(124, 58, 237, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
             z-index: -1;
         }
 
         .content {
             text-align: center;
             max-width: 1100px;
-            padding: 60px 24px;
-            animation: fadeIn 1.2s ease-out;
+            padding: 80px 24px;
+            animation: fadeIn 1s ease-out;
         }
 
         h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(3rem, 10vw, 5rem);
+            font-size: clamp(3rem, 10vw, 5.5rem);
             font-weight: 800;
             letter-spacing: -3px;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff 30%, var(--accent-primary) 100%);
+            background: linear-gradient(135deg, var(--text-main) 40%, var(--accent-primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 30px rgba(138, 43, 226, 0.3));
         }
 
-        /* Kapazitäts-Banner */
+        /* Kapazitäts-Banner (Hell & Fokus) */
         .capacity-banner {
             background: var(--banner-bg);
-            color: #030008;
-            padding: 15px 25px;
-            border-radius: 12px;
+            color: var(--text-main);
+            padding: 20px 30px;
+            border-radius: 20px;
             margin-bottom: 60px;
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
             display: inline-block;
-            max-width: 700px;
-            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
-            border-left: 5px solid var(--accent-primary);
+            max-width: 750px;
+            box-shadow: 0 10px 40px rgba(124, 58, 237, 0.08);
+            border: 1px solid var(--glass-border);
+            border-left: 6px solid var(--accent-primary);
         }
 
         .capacity-banner strong {
             display: block;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.8rem;
-            margin-bottom: 4px;
+            letter-spacing: 1.5px;
+            font-size: 0.75rem;
+            margin-bottom: 6px;
             color: var(--accent-primary);
         }
 
         .services-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 25px;
             margin-bottom: 60px;
         }
 
         .service-box {
             background: var(--glass);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
+            border-radius: 28px;
             padding: 40px 30px;
             display: flex;
             flex-direction: column;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .service-box:hover {
-            transform: translateY(-12px);
+            transform: translateY(-8px);
+            background: #ffffff;
             border-color: var(--accent-primary);
-            background: rgba(138, 43, 226, 0.05);
+            box-shadow: 0 25px 50px rgba(124, 58, 237, 0.1);
         }
 
         .service-box h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             margin: 0 0 16px 0;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-main);
         }
 
         .service-box p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.7;
             color: var(--text-dim);
             margin-bottom: 24px;
@@ -127,16 +129,16 @@
 
         .price {
             font-weight: 700;
-            font-size: 1.1rem;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
+            font-size: 1.05rem;
+            padding: 14px;
+            background: rgba(124, 58, 237, 0.04);
+            border-radius: 16px;
+            color: var(--accent-primary);
         }
 
         .tax-note {
-            font-size: 0.8rem;
-            color: #444;
+            font-size: 0.75rem;
+            color: #94a3b8;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
@@ -144,7 +146,7 @@
         hr {
             border: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+            background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
             margin: 60px auto;
         }
 
@@ -156,28 +158,33 @@
         }
 
         .footer-grid strong {
-            color: #fff;
+            color: var(--text-main);
             display: block;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-size: 1rem;
         }
 
         .legal p, .contact-info p {
             color: var(--text-dim);
-            line-height: 1.8;
+            line-height: 1.7;
+            font-size: 0.9rem;
             margin: 0;
         }
 
         a {
             color: var(--accent-secondary);
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 500;
+            transition: all 0.3s;
         }
 
-        a:hover { color: var(--accent-primary); }
+        a:hover {
+            color: var(--accent-primary);
+            text-decoration: underline;
+        }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -193,47 +200,47 @@
         <h1>iankas</h1>
         
         <div class="capacity-banner">
-            <strong>Status: Kapazitätsgrenze erreicht</strong>
-            Aktuell können wir keine Neumandate entgegennehmen. Gerne setzen wir Sie auf unsere Warteliste – senden Sie uns hierzu einfach eine kurze Nachricht per E-Mail.
+            <strong>Exklusivität & Qualität</strong>
+            Aufgrund der aktuell hohen Nachfrage haben wir unsere Kapazitätsgrenzen erreicht. Wir legen Wert auf höchste Präzision und nehmen daher vorerst keine neuen Mandate an. Gerne nehmen wir Ihre Anfrage für unsere Warteliste per E-Mail entgegen.
         </div>
 
         <div class="services-container">
             <div class="service-box">
                 <h3>Kaltakquise</h3>
-                <p>Authentische Akquise auf Schweizerdeutsch, die Türen öffnet und nachhaltiges Interesse weckt.</p>
+                <p>Authentische Akquise auf Schweizerdeutsch, die Türen öffnet und nachhaltiges Interesse bei Ihren Zielkunden weckt.</p>
                 <div class="price">CHF 100.– / Termin</div>
             </div>
             
             <div class="service-box">
                 <h3>Mystery-Shopping</h3>
-                <p>Präzise Vor-Ort-Analysen in AG & ZH für einen messbaren Vorsprung gegenüber Ihrer Konkurrenz.</p>
+                <p>Präzise Analysen vor Ort (AG/ZH) für einen messbaren Vorsprung gegenüber Ihrer Konkurrenz.</p>
                 <div class="price">CHF 65.– / Std.</div>
             </div>
             
             <div class="service-box">
                 <h3>Copywriting</h3>
-                <p>Professionelle Lokalisierung Ihrer Inhalte für den Schweizer Markt – emotional und direkt.</p>
+                <p>Professionelle Lokalisierung Ihrer Inhalte für den Schweizer Markt – emotional, präzise und wirkungsvoll.</p>
                 <div class="price">CHF 50.– / Std.</div>
             </div>
         </div>
 
-        <p class="tax-note">Exklusive 8.1% MwSt</p>
+        <p class="tax-note">Alle Preise exklusive 8.1% MwSt</p>
         
         <hr>
 
         <div class="footer-grid">
             <div class="legal">
-                <strong>HQ Swiss</strong>
+                <strong>Impressum</strong>
                 <p>iankas GmbH<br>
                 Jan Lukas Lehmann<br>
                 Quellenstrasse 15, 5242 Birr<br>
                 CHE-181.804.178</p>
             </div>
             <div class="contact-info">
-                <strong>Contact</strong>
+                <strong>Kontakt</strong>
                 <p>
-                    Direct: <a href="tel:+41563000054">+41 56 300 00 54</a><br>
-                    Mail: <a href="mailto:info@iankas.com">info@iankas.com</a>
+                    Tel: <a href="tel:+41563000054">+41 56 300 00 54</a><br>
+                    E-Mail: <a href="mailto:info@iankas.com">info@iankas.com</a>
                 </p>
             </div>
         </div>

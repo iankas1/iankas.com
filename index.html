@@ -3,148 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iankas GmbH</title>
+    <title>iankas GmbH | Premium Sales & Copy</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
     <style>
+        :root {
+            --bg: #030008;
+            --accent-primary: #8A2BE2; /* Violett */
+            --accent-secondary: #4D4DFF; /* Blau */
+            --text-main: #ffffff;
+            --text-dim: #a1a1aa;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
         body {
-            background-color: #ffffff;
-            font-family: "Times New Roman", Times, serif;
+            background-color: var(--bg);
+            /* Subtiles Punkte-Raster für den High-Tech-Look */
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: #000000;
+            color: var(--text-main);
+            overflow-x: hidden;
         }
+
+        /* Glühende Nebel im Hintergrund */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 10% 10%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(77, 77, 255, 0.15) 0%, transparent 40%);
+            z-index: -1;
+        }
+
         .content {
             text-align: center;
-            max-width: 850px;
-            padding: 40px 20px;
+            max-width: 1100px;
+            padding: 80px 24px;
+            animation: fadeIn 1.2s ease-out;
         }
+
         h1 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -3px;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #fff 30%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 30px rgba(138, 43, 226, 0.3));
         }
-        
+
         .services-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 30px 0;
+            gap: 24px;
+            margin-bottom: 60px;
         }
+
         .service-box {
-            border: 1px solid #000;
-            padding: 25px 15px;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px 30px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            min-height: 220px;
-            box-sizing: border-box;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
         }
+
+        .service-box:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: var(--accent-primary);
+            background: rgba(138, 43, 226, 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                        0 0 20px rgba(138, 43, 226, 0.2);
+        }
+
         .service-box h3 {
-            font-size: 1.1rem;
-            margin-top: 0;
-            text-transform: uppercase;
-            border-bottom: 1px solid #000;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            margin: 0 0 16px 0;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+
         .service-box p {
-            font-size: 0.95rem;
-            line-height: 1.4;
-            margin: 0 0 15px 0;
-        }
-        .price {
-            font-weight: bold;
             font-size: 1rem;
-            border-top: 1px dotted #000;
-            padding-top: 10px;
+            line-height: 1.7;
+            color: var(--text-dim);
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
         }
 
         .tax-note {
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-            font-style: italic;
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         hr {
             border: 0;
-            border-top: 1px solid #000;
-            margin: 20px auto;
-            width: 100%;
-        }
-        .legal p, .contact-info p {
-            margin: 5px 0;
-            font-size: 1rem;
-        }
-        a {
-            color: #0000EE;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+            margin: 60px auto;
         }
 
-        @media (max-width: 750px) {
-            .services-container {
-                grid-template-columns: 1fr;
-            }
-            body { 
-                height: auto;
-                padding: 40px 0;
-            }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .footer-grid strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .legal p, .contact-info p {
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        a {
+            color: var(--accent-secondary);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 1px;
+            bottom: -2px; left: 0;
+            background-color: var(--accent-primary);
+            transition: width 0.3s;
+        }
+
+        a:hover { color: var(--accent-primary); }
+        a:hover::after { width: 100%; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .services-container { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            h1 { margin-bottom: 40px; }
         }
     </style>
 </head>
 <body>
 
     <div class="content">
-        <h1>iankas GmbH</h1>
+        <h1>iankas</h1>
         
         <div class="services-container">
-            <!-- Box 1: Sales -->
             <div class="service-box">
-                <div>
-                    <h3>Kaltakquise</h3>
-                    <p>Authentische Kaltakquise auf Schweizerdeutsch, die Türen öffnet und echtes Interesse weckt.</p>
-                </div>
-                <div class="price">CHF 100.– pro Termin </div>
+                <h3>Kaltakquise</h3>
+                <p>Authentische Akquise auf Schweizerdeutsch, die Türen öffnet und nachhaltiges Interesse weckt.</p>
+                <div class="price">CHF 100.– / Termin</div>
             </div>
             
-            <!-- Box 2: Quality -->
             <div class="service-box">
-                <div>
-                    <h3>Mystery-Shopping</h3>
-                    <p>Mystery Shopping in AG & ZH. Objektive Analysen für einen messbaren Wettbewerbsvorteil.</p>
-                </div>
-                <div class="price">CHF 65.– pro Stunde inkl. Report</div>
+                <h3>Mystery-Shopping</h3>
+                <p>Präzise Vor-Ort-Analysen in AG & ZH für einen messbaren Vorsprung gegenüber Ihrer Konkurrenz.</p>
+                <div class="price">CHF 65.– / Std.</div>
             </div>
             
-            <!-- Box 3: Schreiben -->
             <div class="service-box">
-                <div>
-                    <h3>Copy</h3>
-                    <p>Professionelle Lokalisierung Ihrer Inhalte für den Schweizer Markt – emotional und präzise.</p>
-                </div>
-                <div class="price">CHF 50.– pro Stunde Aufwand</div>
+                <h3>Copywriting</h3>
+                <p>Professionelle Lokalisierung Ihrer Inhalte für den Schweizer Markt – emotional und direkt.</p>
+                <div class="price">CHF 50.– / Std.</div>
             </div>
         </div>
 
-        <p class="tax-note">Alle Angaben zzgl. MwSt von 8.1%</p>
+        <p class="tax-note">Exklusive 8.1% MwSt</p>
         
         <hr>
 
-        <div class="legal">
-            <p>Geschäftsführer: Jan Lukas Lehmann</p>
-            <p>Quellenstrasse 15, 5242 Birr</p>
-            <p>CHE-181.804.178</p>
-        </div>
-
-        <hr>
-
-        <div class="contact-info">
-            <p>Kontakt: <a href="mailto:info@iankas.com">info@iankas.com</a></p>
-            <p>Telefon: <a href="tel:+41563000054">+41 56 300 00 54</a></p>
+        <div class="footer-grid">
+            <div class="legal">
+                <strong>HQ Swiss</strong>
+                <p>iankas GmbH<br>
+                Jan Lukas Lehmann<br>
+                Quellenstrasse 15, 5242 Birr<br>
+                CHE-181.804.178</p>
+            </div>
+            <div class="contact-info">
+                <strong>Contact</strong>
+                <p>
+                    Direct: <a href="tel:+41563000054">+41 56 300 00 54</a><br>
+                    Mail: <a href="mailto:info@iankas.com">info@iankas.com</a>
+                </p>
+            </div>
         </div>
     </div>
 
